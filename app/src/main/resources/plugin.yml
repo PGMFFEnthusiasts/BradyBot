@@ -1,0 +1,5 @@
+name: BradyBot
+softdepend: [PGM]
+description: Brady Bot
+main: me.fireballs.BradyBotPlugin
+version: 1.0
