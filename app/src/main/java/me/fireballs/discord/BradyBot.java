@@ -6,6 +6,7 @@ import me.fireballs.server.query.ServerStatusProvider;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.internal.utils.JDALogger;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -32,6 +33,7 @@ public class BradyBot {
 
     public void load() {
         this.serverStatusProvider.load();
+        JDALogger.setFallbackLoggerEnabled(false);
         this.jda = JDABuilder.createDefault(token).build();
         this.listener = new DiscordListener(jda, serverStatusProvider, () -> botReady = true);
         this.jda.addEventListener(this.listener);

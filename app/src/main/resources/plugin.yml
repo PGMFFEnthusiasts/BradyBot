@@ -1,5 +1,8 @@
 name: BradyBot
-softdepend: [PGM]
+load: STARTUP
+loadbefore:
+  - Community
+  - PGM
 description: Brady Bot
 main: me.fireballs.BradyBotPlugin
 version: 1.0
